@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.renjin:datasets:0.7.0-RC6">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/renjin/datasets/0.7.0-RC6/datasets-0.7.0-RC6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/renjin/datasets/0.7.0-RC6/datasets-0.7.0-RC6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/renjin/datasets/0.7.0-RC6/datasets-0.7.0-RC6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

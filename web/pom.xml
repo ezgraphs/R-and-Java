@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.saternos.R</groupId>
+    <artifactId>REnjinTest</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--
+
+    To build and run:
+
+        mvn clean install exec:java
+
+    -->
+
+    <dependencies>
+
+        <!-- Renjin itself -->
+        <dependency>
+            <groupId>org.renjin</groupId>
+            <artifactId>renjin-script-engine</artifactId>
+            <version>0.7.0-RC6</version>
+        </dependency>
+
+        <!--
+ The install.packages() doesn't work in Renjin.
+ To load a CRAN package use library() and Renjin will use the
+ package from a public repository (requires internet connectivity).
+ Build state of CRAN packages against Renjin available online at
+
+ http://packages.renjin.org/index.html
+
+ Many CRAN packages do not work in Renjin (build failed).
+ Some load, but do not fully work because a dependency is missing.
+ Small -pure R- package with no few or no dependencies work best
+
+        -->
+
+        <!-- Despite the docs indicating version 1.0, only Snapshots
+         were available in the rengin.org repository when this was
+         written
+         -->
+        <dependency>
+            <groupId>org.renjin.cran</groupId>
+            <artifactId>celestial</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.renjin.cran</groupId>
+            <artifactId>exptest</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>8.1.0.RC5</version>
+        </dependency>
+        
+    </dependencies>
+
+    <!--
+    Note the repository in use!
+    This is where Rengin and related libraries reside.
+    -->
+    <repositories>
+        <repository>
+            <id>bedatadriven</id>
+            <name>bedatadriven public repo</name>
+            <url>http://nexus.bedatadriven.com/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.saternos.R.RServer</mainClass>
+                    <arguments>
+                        <argument>3000</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

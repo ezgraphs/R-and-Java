@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.renjin.cran:exptest:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/renjin/cran/exptest/1.0-SNAPSHOT/exptest-1.0-20130714.192118-4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/renjin/cran/exptest/1.0-SNAPSHOT/exptest-1.0-20130714.192118-4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/renjin/cran/exptest/1.0-SNAPSHOT/exptest-1.0-20130714.192118-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
